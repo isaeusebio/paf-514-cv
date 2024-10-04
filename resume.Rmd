@@ -1,6 +1,6 @@
 ---
-title: Nick Strayer's Resume"
-author: Nick Strayer
+title: Isabel Eusebio's Resume"
+author: Isabel Eusebio
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -34,8 +34,8 @@ position_data <- read_csv('positions.csv') %>%
   mutate(
     # Build some custom sections by collapsing others
     section = case_when(
-      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
-      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+    
+    section %in% c('industry_positions', 'teaching_positions', 'volunteer_positions') ~ 'experience', 
       TRUE ~ section
     )
   ) 
@@ -47,18 +47,17 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](https://raw.githubusercontent.com/Watts-College/paf-514-template/main/labs/images/avatar-01.png){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> ieusebio@asu.edu
+- <i class="fa fa-github"></i> github.com/isaeusebio
+- <i class="fa fa-link"></i> [www.linkedin.com/in/isabel-eusebio-1776559b](LinkedIn)
+- <i class="fa fa-phone"></i> (602) 635-0872
 
 
 
@@ -85,7 +84,7 @@ build_skill_bars(skills)
 Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/nstrayer/<name>`
+All projects available at `github.com/isaeusebio/<name>`
 
 
 - `shinysense`: R package to use sensor data in Shiny apps
@@ -96,7 +95,7 @@ All projects available at `github.com/nstrayer/<name>`
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full CV at nickstrayer.me/cv for more complete list of positions and publications.
+See full CV at www.linkedin.com/in/isabel-eusebio-1776559b for more complete list of positions and publications.
 
 
 Disclaimer {#disclaimer}
@@ -114,14 +113,11 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Isabel Eusebio {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
-"
+intro_text <- "Writing Sample resume for PAF 514"
 
 
 cat(sanitize_links(intro_text))
@@ -142,15 +138,8 @@ Selected Positions {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
-position_data %>% print_section('positions')
+position_data %>% print_section('experience')
 ```
 
-Selected Writing {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-
-```{r}
-position_data %>% print_section('writings')
-```
 
 
